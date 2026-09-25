@@ -16,8 +16,8 @@ description: >-
 # address (or custom domain) and leave baseurl blank for a user/org
 # site (username.github.io), or set baseurl to "/repo-name" for a
 # project site.
-url: "https://yourusername.github.io"
-baseurl: ""
+url: "https://operationpantsu.github.io"
+baseurl: "/PersonalSite"
 
 author: Your Name
 email: you@example.com

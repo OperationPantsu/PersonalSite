@@ -5,13 +5,18 @@ layout: default
   <div class="about-bio">
     {{ content }}
 
-    {% assign active_links = site.social | where_exp: "l", "l.url != nil and l.url != ''" %}
-    {% if active_links.size > 0 %}
-    <p class="about-links">
-      {% for link in active_links %}
-        <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a>{% unless forloop.last %}<span class="dot">/</span>{% endunless %}
+    {% capture links_html %}
+      {% assign printed_any = false %}
+      {% for link in site.social %}
+        {% if link.url and link.url != "" %}
+          {% if printed_any %}<span class="dot">/</span>{% endif %}<a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a>
+          {% assign printed_any = true %}
+        {% endif %}
       {% endfor %}
-    </p>
+    {% endcapture %}
+    {% assign links_html = links_html | strip %}
+    {% if links_html.size > 0 %}
+    <p class="about-links">{{ links_html }}</p>
     {% endif %}
   </div>
 

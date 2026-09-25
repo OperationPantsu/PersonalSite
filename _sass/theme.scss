@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------
 // THEME — variables. Change colors, fonts and spacing here.
 // ------------------------------------------------------------------
-$color-bg: #ffffff;
+$color-bg: #fca311;
 $color-text: #111111;
 $color-text-muted: #6b7280;
 $color-border: #e5e7eb;
@@ -60,7 +60,7 @@ h1, h2, h3 { font-weight: 600; margin: 0; }
   max-width: $max-width;
   margin: 0 auto;
   padding: 24px $gutter;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba($color-bg, 0.85);
   backdrop-filter: blur(6px);
 }
 

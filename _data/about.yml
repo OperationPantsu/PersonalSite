@@ -1,0 +1,31 @@
+# ------------------------------------------------------------------
+# ABOUT PAGE DATA — edit these lists to update your timeline.
+# The bio paragraphs themselves live in about.md, not here.
+# Leave a list empty ("experience: []") to hide that section.
+# ------------------------------------------------------------------
+
+experience:
+  - date: "2025–2026"
+    role: "Industrial Designer at Company"
+    location: "City, Country"
+    link:
+      label: ""
+      url: ""
+  - date: "2023"
+    role: "Design Intern at Another Company"
+    location: "City, Country"
+    link:
+      label: "Case study"
+      url: ""
+
+education:
+  - date: "2021–2024"
+    title: "MFA - Advanced Product Design, School Name"
+  - date: "2017–2020"
+    title: "BFA - Product Design, School Name"
+
+press:
+  - label: "Project Name — Publication Name"
+    url: "#"
+  - label: "Another Project — Another Publication"
+    url: "#"

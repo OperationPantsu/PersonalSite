@@ -1,0 +1,60 @@
+---
+layout: default
+---
+<article class="about">
+  <div class="about-bio">
+    {{ content }}
+
+    {% assign active_links = site.social | where_exp: "l", "l.url != nil and l.url != ''" %}
+    {% if active_links.size > 0 %}
+    <p class="about-links">
+      {% for link in active_links %}
+        <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a>{% unless forloop.last %}<span class="dot">/</span>{% endunless %}
+      {% endfor %}
+    </p>
+    {% endif %}
+  </div>
+
+  {% if site.data.about.experience.size > 0 %}
+  <section class="about-section">
+    <h2>Experience</h2>
+    <ul class="timeline">
+      {% for item in site.data.about.experience %}
+      <li>
+        <span class="timeline-date">{{ item.date }}</span>
+        <span class="timeline-body">
+          <strong>{{ item.role }}</strong>
+          {% if item.location %}<span class="timeline-location">{{ item.location }}</span>{% endif %}
+          {% if item.link.url and item.link.url != "" %}<a class="timeline-link" href="{{ item.link.url }}" target="_blank" rel="noopener">{{ item.link.label }} &rarr;</a>{% endif %}
+        </span>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if site.data.about.education.size > 0 %}
+  <section class="about-section">
+    <h2>Education</h2>
+    <ul class="timeline">
+      {% for item in site.data.about.education %}
+      <li>
+        <span class="timeline-date">{{ item.date }}</span>
+        <span class="timeline-body"><strong>{{ item.title }}</strong></span>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if site.data.about.press.size > 0 %}
+  <section class="about-section">
+    <h2>Publication &amp; Recognition</h2>
+    <ul class="press-list">
+      {% for item in site.data.about.press %}
+      <li><a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.label }} &rarr;</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</article>

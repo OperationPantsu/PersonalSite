@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<section class="hero">
+  <p>
+    {{ site.tagline_prefix }}
+    {% if site.tagline_link_url and site.tagline_link_url != "" %}
+      <a href="{{ site.tagline_link_url }}" target="_blank" rel="noopener">{{ site.tagline_link_text }}</a>
+    {% else %}
+      {{ site.tagline_link_text }}
+    {% endif %}
+  </p>
+</section>
+
+{% if content and content != "" %}
+<div class="home-intro">{{ content }}</div>
+{% endif %}
+
+{% assign projects = site.projects | sort: 'order' %}
+<section class="work-grid">
+  {% for project in projects %}
+  <a class="work-card" href="{{ project.url | relative_url }}">
+    <div class="work-card-image">
+      <img src="{{ project.cover | relative_url }}" alt="{{ project.title }}" loading="lazy">
+    </div>
+    <div class="work-card-meta">
+      <span class="work-card-title">{{ project.title }}</span>
+      {% if project.type %}<span class="work-card-type">{{ project.type }}</span>{% endif %}
+    </div>
+  </a>
+  {% endfor %}
+</section>
+
+{% if projects.size == 0 %}
+<p class="empty-state">
+  No projects yet — add one in <code>_projects/</code>. See <code>_projects/example-project.md</code> for the template.
+</p>
+{% endif %}

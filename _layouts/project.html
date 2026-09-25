@@ -1,0 +1,51 @@
+---
+layout: default
+---
+{% assign projects = site.projects | sort: 'order' %}
+{% assign project_index = 0 %}
+{% for p in projects %}
+  {% if p.url == page.url %}{% assign project_index = forloop.index0 %}{% endif %}
+{% endfor %}
+{% assign prev_project = projects[project_index | minus: 1] %}
+{% assign next_index = project_index | plus: 1 %}
+{% if next_index == projects.size %}{% assign next_index = 0 %}{% endif %}
+{% assign next_project = projects[next_index] %}
+
+<article class="project">
+  <a class="back-link" href="{{ '/' | relative_url }}">&larr; Work</a>
+
+  <header class="project-header">
+    <h1>{{ page.title }}</h1>
+    <div class="project-header-meta">
+      {% if page.type %}<span>{{ page.type }}</span>{% endif %}
+      {% if page.year %}<span>{{ page.year }}</span>{% endif %}
+    </div>
+    {% if page.subtitle %}<p class="project-subtitle">{{ page.subtitle }}</p>{% endif %}
+  </header>
+
+  {% if content and content != "" %}
+  <div class="project-content">{{ content }}</div>
+  {% endif %}
+
+  <div class="project-gallery">
+    {% if page.cover %}
+    <button class="project-gallery-item" data-lightbox-trigger data-src="{{ page.cover | relative_url }}" data-alt="{{ page.title }}">
+      <img src="{{ page.cover | relative_url }}" alt="{{ page.title }}" loading="lazy">
+    </button>
+    {% endif %}
+    {% for image in page.gallery %}
+    <button class="project-gallery-item" data-lightbox-trigger data-src="{{ image | relative_url }}" data-alt="{{ page.title }}">
+      <img src="{{ image | relative_url }}" alt="{{ page.title }}" loading="lazy">
+    </button>
+    {% endfor %}
+  </div>
+
+  <nav class="project-pagination">
+    {% if prev_project %}
+    <a href="{{ prev_project.url | relative_url }}">&larr; {{ prev_project.title }}</a>
+    {% else %}<span></span>{% endif %}
+    {% if next_project %}
+    <a href="{{ next_project.url | relative_url }}">{{ next_project.title }} &rarr;</a>
+    {% endif %}
+  </nav>
+</article>

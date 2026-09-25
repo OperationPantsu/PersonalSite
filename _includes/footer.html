@@ -1,0 +1,9 @@
+<footer class="site-footer">
+  {% assign active_links = site.social | where_exp: "l", "l.url != nil and l.url != ''" %}
+  <div class="footer-links">
+    {% for link in active_links %}
+      <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a>{% unless forloop.last %}<span class="dot">/</span>{% endunless %}
+    {% endfor %}
+  </div>
+  <div class="footer-copy">&copy; {{ 'now' | date: "%Y" }} {{ site.title }}</div>
+</footer>

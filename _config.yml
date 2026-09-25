@@ -1,0 +1,82 @@
+# ------------------------------------------------------------------
+# SITE SETTINGS — edit these to make the theme yours.
+# After changing this file, GitHub Pages rebuilds automatically
+# (takes ~1 minute). Locally, restart `bundle exec jekyll serve`.
+# ------------------------------------------------------------------
+
+title: "Your Name"
+tagline_prefix: "An Industrial Designer from France, currently at"
+tagline_link_text: "Company"
+tagline_link_url: "https://example.com"
+
+description: >-
+  Portfolio of Your Name, an industrial / product designer.
+
+# Used for canonical URLs, sitemap, RSS. Set url to your GitHub Pages
+# address (or custom domain) and leave baseurl blank for a user/org
+# site (username.github.io), or set baseurl to "/repo-name" for a
+# project site.
+url: "https://yourusername.github.io"
+baseurl: ""
+
+author: Your Name
+email: you@example.com
+
+# Shown in the footer and on the About page.
+social:
+  - label: Email
+    url: mailto:you@example.com
+  - label: LinkedIn
+    url: https://linkedin.com/in/yourusername
+  - label: Instagram
+    url: ""
+  - label: Are.na
+    url: ""
+
+# Header navigation, in order. url can point to an internal page
+# (starting with /) or an external site.
+navigation:
+  - title: Work
+    url: /
+  - title: About
+    url: /about/
+
+# ------------------------------------------------------------------
+# Below this line is plumbing — safe to leave alone.
+# ------------------------------------------------------------------
+
+collections:
+  projects:
+    output: true
+    permalink: /work/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+markdown: kramdown
+kramdown:
+  input: GFM
+permalink: pretty
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - node_modules

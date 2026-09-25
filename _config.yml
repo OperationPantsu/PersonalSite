@@ -4,13 +4,13 @@
 # (takes ~1 minute). Locally, restart `bundle exec jekyll serve`.
 # ------------------------------------------------------------------
 
-title: "Your Name"
-tagline_prefix: "An Industrial Designer from France, currently at"
-tagline_link_text: "Company"
-tagline_link_url: "https://example.com"
+title: "William Su"
+tagline_prefix: "A villager in this game of life, driven to build tangible products that can be shared with all!"
+tagline_link_text: ""
+tagline_link_url: ""
 
 description: >-
-  Portfolio of Your Name, an industrial / product designer.
+  Portfolio of William Su.
 
 # Used for canonical URLs, sitemap, RSS. Set url to your GitHub Pages
 # address (or custom domain) and leave baseurl blank for a user/org
@@ -19,19 +19,17 @@ description: >-
 url: "https://operationpantsu.github.io"
 baseurl: "/PersonalSite"
 
-author: Your Name
-email: you@example.com
+author: William Su
+email: suwilliam2014@gmail.com
 
 # Shown in the footer and on the About page.
 social:
   - label: Email
-    url: mailto:you@example.com
+    url: mailto:suwilliam2014@gmail.com
   - label: LinkedIn
-    url: https://linkedin.com/in/yourusername
-  - label: Instagram
-    url: ""
-  - label: Are.na
-    url: ""
+    url: https://www.linkedin.com/in/pantsu/
+  - label: GitHub
+    url: https://github.com/OperationPantsu
 
 # Header navigation, in order. url can point to an internal page
 # (starting with /) or an external site.

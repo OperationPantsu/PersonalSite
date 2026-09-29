@@ -8,6 +8,10 @@ and a data-driven About page with an experience/education timeline.
 Everything you'd want to change day-to-day lives in plain YAML or
 Markdown files — no HTML/CSS editing required for routine updates.
 
+**Editing from github.com with no local setup?** See
+[EDITING.md](EDITING.md) for a copy-paste cheat sheet covering every
+common change.
+
 ## Quick start
 
 1. **Put your info in `_config.yml`** — name, tagline, nav links, and
